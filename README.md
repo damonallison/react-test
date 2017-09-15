@@ -14,6 +14,8 @@ cd my-app
 npm start
 ```
 
+## Main points
+
 * JSX is a XML like syntax for composing a React component tree.
 * React is based on a `virtual DOM`, which only rerenders deltas.
 * `Controlled components` : a component controlled by its parent.
@@ -28,6 +30,8 @@ npm start
 
 * Minimalistic compared to `Angular`.
 * Flexible : "bring your own stack".
+  * [React Router](https://reacttraining.com/react-router/)
+  * 
 * Functional, immutable bent.
 * Excellent debugging extensions.
     * React Devtools chrome extension for debugging rendered component trees.
