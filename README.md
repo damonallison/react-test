@@ -1,5 +1,9 @@
 # [React](https://facebook.github.io/react/)
 
+## Tutorial
+
+https://facebook.github.io/react/tutorial/tutorial.html
+
 ## Creating a new application
 
 ```
@@ -15,7 +19,7 @@ npm start
 * `Controlled components` : a component controlled by its parent.
     * It is given state by its parent.
     * Sends state back to its parent.
-* Immutability improves react performance by simplifying update detection.
+* Immutability / functional components improves react performance by simplifying update detection.
 
 
 # Comparison to Angular
