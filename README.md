@@ -14,46 +14,41 @@ cd my-app
 npm start
 ```
 
-## Main points
-
-* JSX is a XML like syntax for composing a React component tree.
-* React is based on a `virtual DOM`, which only rerenders deltas.
-* `Controlled components` : a component controlled by its parent.
-    * It is given state by its parent.
-    * Sends state back to its parent.
-* Immutability / functional components improves react performance by simplifying update detection.
-
-
 # Comparison to Angular
+
+* Both React and Angular provide structure to building web applications.
+* Both frameworks are based on component composition.
+* Angular is a full featured framework, React is minimalistic.
+* React has a lower learning curve.
 
 ## React
 
 * Minimalistic compared to `Angular`.
 * Flexible : "bring your own stack".
-  * [React Router](https://reacttraining.com/react-router/)
-  * 
+  * Router : [React Router](https://reacttraining.com/react-router/)
+  * State Management : [Redux](http://redux.js.org/)
 * Functional, immutable bent.
 * Excellent debugging extensions.
     * React Devtools chrome extension for debugging rendered component trees.
     * VS Code Debugger chrome extension for debugging JS.
+* Will require more guidance / library conformity than Angular.
+    * Each react app will be wildly different.
 
 ## Angular
 
 * Full MVC framework.
-* Data binding / DI (DI viewed as counter to functional / immutable)* Heavy. Complex lifecycle.
+* Data binding / DI (DI viewed as counter to functional / immutable)
+* Heavy. Complex lifecycle.
 * Leaky abstractions - you need to read the code. Hard to debug.
-
-## Similiarities
-
-* Both frameworks are based on component composition.
-
 
 ## Main Differences
 
-* JSX rather than classic HTML.
-    * JSX = XML-like language built on top of JS.
+* Template language.
+    * React uses `JSX` to build component trees.
+        * JSX = XML-like language built on top of JS.
+        * Does this work in practice? JSX sounds like a **complete hack**. JS DSL to produce HTML? What?
+    * Angular uses HTML templates with custom Angular directives (e.g., `ngIf`, `ngFor`).
     * How does this work in practice?
-        * JSX sounds like a **complete hack**. JS DSL to produce HTML? What?
 
 * Requires you to build your own stack (good or bad?)
     * Router
@@ -61,7 +56,7 @@ npm start
     * Additional unit testing libraries.
 
 * Type checking
-    * `Flow` vs. `Typescript`
+    * `Flow` (JS type checker) vs. `Typescript` (completely different language)
     * `Redux` vs. `Binding`
         * Is this a fair comparison?
 
@@ -69,5 +64,6 @@ npm start
 ## Links
 
 * [React vs. Angular](https://www.sitepoint.com/react-vs-angular/)
+    * Describes both products with no clear winner. The authors generally prefer React due to minialism.
 * [Angular vs. React - the tie breaker](https://www.airpair.com/angularjs/posts/angular-vs-react-the-tie-breaker)
-
+    * React is generally easier. Likes Angular's templating engine over React.
