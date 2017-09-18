@@ -14,6 +14,12 @@ cd my-app
 npm start
 ```
 
+## [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
+
+* Break the UI into components and hierarchy.
+* Build a static version.
+* Determine your minimal state representation. 
+
 # Comparison to Angular
 
 * Both React and Angular provide structure to building web applications.
@@ -33,6 +39,7 @@ npm start
     * VS Code Debugger chrome extension for debugging JS.
 * Will require more guidance / library conformity than Angular.
     * Each react app will be wildly different.
+    * Paradox of choice? Too many things to pick from?
 
 ## Angular
 
