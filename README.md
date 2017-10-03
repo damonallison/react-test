@@ -20,13 +20,6 @@ npm start
 * Build a static version.
 * Determine your minimal state representation.
 
-# Comparison to Angular
-
-* Both React and Angular provide structure to building web applications.
-* Both frameworks are based on component composition.
-* Angular is a full featured framework, React is minimalistic.
-* React has a lower learning curve.
-
 ## React
 
 * Minimalistic compared to `Angular`.
@@ -47,6 +40,14 @@ npm start
 * UI state management container.
 * Very functional. State is immutable.
 * Reducers return updated data structures based on the actions they are given. (State Machines)
+
+## React | Angular Comparison
+
+* Both React and Angular provide structure to building web applications.
+* Both frameworks are based on component composition.
+* Angular is a full featured framework, React is minimalistic.
+* React has a lower learning curve, less features out of the box.
+* React will require each project to choose a library set to handle state management, routing, etc.
 
 ## Angular
 
