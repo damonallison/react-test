@@ -9,6 +9,58 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+import Guess from './guess.js';
+import JsTest from './jstest.js';
+
+function TestComponent(props) {
+
+  // Return a Person "Object".
+  // This is called a "constructor function".
+  //
+  // JS convention is to capitalize constructor function as a reminder
+  // to call them with `new`.
+  function Person(first, last) {
+    this.first = first;
+    this.last = last;
+
+    // Keep track of objects created.
+    const count = localStorage.getItem("count") || 0
+    localStorage.setItem("count", (parseInt(count) + 1))
+  };
+
+  // Define this function once and attach to the
+  // `Person` "object". This prevents a new function
+  // from being created with every `Person` instance.
+  Person.prototype.fullName = function() {
+    return this.first + ' ' + this.last;
+  };
+  Person.prototype.toString = function() {
+    return "<Person first=" + this.first + " last=" + this.last + " />";
+  };
+
+  // The "rest" parameter will capture all remaining arguments
+  // into the `args` array. This is cleaner than using JS's internal
+  // `arguments` array since it makes the caller explicit.
+
+  function add(...args) {
+    let validArgs = args.filter(function(val, index, array) {
+      return !isNaN(val)
+    });
+    return "Adding " + validArgs.length + " arguments totalling: " +
+      validArgs.reduce(function(total, value) {
+        return total + parseInt(value)
+      }, 0);
+  }
+
+  return (
+    <div>
+      <div>{props.name} {add(props.x, props.y)}</div>
+      <div>Calculating: {add(props.x)}</div>
+      <div>Person: {(new Person("Test", "User")).toString()}</div>
+      <div> People Created = {localStorage.getItem("count")} </div>
+    </div>
+  );
+}
 
 //
 // A react app is built from components.
@@ -75,7 +127,9 @@ class Board extends React.Component {
       // Here we assume a hardcoded board with 9 squares.
       // We should validate that and lay out the board with code.
       <div>
+        <TestComponent name="Calculator" x="10" y="20" />
         <Person firstName="Damon" lastName="Allison" />
+        <PersonComponent firstName="Cole" lastName="Allison" />
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -129,8 +183,7 @@ class Game extends React.Component {
     const moves = history.map((step, move) => {
       const desc = move ? 'Move #' + move : 'Game Start';
       return (
-
-    <li key={move}>
+        <li key={move}>
           <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
         </li>
       );
@@ -209,8 +262,13 @@ function calculateWinner(squares) {
 };
 
 // ========================================
+// <Game />   - Tic-tac-toe
+// <Guess />  - Guess a number
+// <JsTest /> - Javascript examples
+// ========================================
+
 
 ReactDOM.render(
-  <Game />,
+  <Guess />,
   document.getElementById('root')
 );

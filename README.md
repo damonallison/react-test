@@ -27,13 +27,11 @@ npm start
   * Router : [React Router](https://reacttraining.com/react-router/)
   * State Management : [Redux](http://redux.js.org/)
 * Functional, immutable bent.
-* Pure javascript. No additional syntax (typescript, directives, template syntax).
 * Excellent debugging extensions.
     * React Devtools chrome extension for debugging rendered component trees.
     * VS Code Debugger chrome extension for debugging JS.
-* Will require more guidance / library conformity than Angular.
-    * Each react app will be wildly different.
-    * Paradox of choice? Too many things to pick from?
+* Requires you to "bring your own stack".
+    * In practice you probably don't need much.
 
 ## [Redux](http://redux.js.org/)
 
@@ -43,11 +41,11 @@ npm start
 
 ## React | Angular Comparison
 
-* Both React and Angular provide structure to building web applications.
-* Both frameworks are based on component composition.
+* Both React and Angular provide componentization to building web applications.
 * Angular is a full featured framework, React is minimalistic.
 * React has a lower learning curve, less features out of the box.
 * React will require each project to choose a library set to handle state management, routing, etc.
+    * There are a few key packages - redux, router.
 
 ## Angular
 
