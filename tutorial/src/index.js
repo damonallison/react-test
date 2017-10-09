@@ -9,8 +9,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import Guess from './guess.js';
-import JsTest from './jstest.js';
+// Custom component
+import Guess from './guess';
 
 function TestComponent(props) {
 
@@ -264,11 +264,9 @@ function calculateWinner(squares) {
 // ========================================
 // <Game />   - Tic-tac-toe
 // <Guess />  - Guess a number
-// <JsTest /> - Javascript examples
 // ========================================
-
 
 ReactDOM.render(
   <Guess />,
-  document.getElementById('root')
+  document.getElementById("app")
 );
