@@ -1,7 +1,8 @@
 //
-// Objects in javascript are based on prototypal inheritance.
+// Objects in JS are based on prototypal inheritance.
 // Proponents of JS think this is more powerful than traditional OO.
 //
+// Objects in ES5:
 // Each object has a prototype chain.
 //
 // var obj = {a : 1}
@@ -56,6 +57,9 @@ test("object basics", () => {
 // Create a new instance of the Person "class":
 // const p = new Person("damon");
 //
+// Note that calling this function without `new` will *not*
+// create a new object and `this` object pointer. Always use
+// `new`!
 function Person(name) {
     this.name = name;
     this.created = Date();
