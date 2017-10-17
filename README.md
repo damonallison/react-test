@@ -4,8 +4,12 @@
 
 * What is `strict mode` in ES5? Why not *always* use it?
 * Is `react-test` compiling down to ES5? Thru `babel`? How to run ES6?
+* How does exception handling work in ES6? (`try / catch / throw`)?
+  * What are the built in exception types?
+
 
 ## Books
+
 * Javascript - The Good Parts
 * [Read Understanding ECMAScript 6 | Leanpub](https://leanpub.com/understandinges6/read)
 * [Node.js in Action: Alex R. Young, Bradley Meck, Mike Cantelon, Tim Oxley, Marc Harter, TJ Holowaychuk, Nathan Rajlich: 9781617292576: Amazon.com: Books](https://www.amazon.com/Node-js-Action-Alex-R-Young/dp/1617292575/ref=dp_ob_title_bk)
@@ -42,6 +46,7 @@
 	* classes / modules
     * Improvements to functions (default param values)
 	* Arrow functions
+    * `this` is not changed when an arrow function is invoked.
 	* Classes (relationship to prototypes)
 	* `let`,  `const` - block level variables. Use instead of `var`.
 
@@ -53,13 +58,29 @@
 * Functions are first class objects. Closures, HOF, etc.
 * Ecosystem. REPL, lightweight tooling.
 * ES6 drastically cleaned up the language.
-    * Lexical scoping with `let` and `const`.
-    * Functions : default parameters and `rest` parameters makes `arguments` irrelevant.
+    * String interoplation.
+    * Lexical scoping with `let` and `const`, block level functions.
+    * Functions.
+      * default parameters and `rest` parameters makes `arguments` irrelevant.
+      * default parameter expressions (`function func(x = getValue()) {}`)
+    * Objects
+      * Introduction of the `super` keyword to invoke methods on an object's prototype.
+      * Object destructuring.
 
 ### Dislikes
 
 * Dynamic typing.
+
+* `strict` and `non strict` mode.
+  * You need a different mental model depending if strict mode is enabled or not.
+  * Someone realized that JS needed to be controlled, introduced strict mode.
+
+* The meta-programming.
+  * Calling functions with `call`, `apply`, and `bind`.
+  * The problem is the `this` pointer differs based on how the function is invoked. It's confusing.
+
 * Semicolons are optional but line termination rules could read the program not as intended. Use semicolons.
+
 * Function arguments.
     * Arguments to a function do not have to match the function's declaration.
     * The `arguments` implicit parameter was created to inspect all function parameters passed into a function without having to formally define the parameter.
@@ -75,13 +96,22 @@
         * Object creation - calling a function with `new`.
 
 * `var` scoping.
-    * Not lexical. `var` introduced anywhere in the function is available anywhere within the function. (Changes w/ ES6?)
+    * Not lexical. `var`, even when defined in a block, is available to the entire function.
+
 * Type cohesion.
     * Strings will coherse when necessary.
 * `parseInt` stops parsing on the first non-numeric character.
 	* `parseInt("20 damon") // 20`
 
 ### Javascript. The Language.
+
+#### ES6 Improvements
+
+* Lexical scoping (`let` and `const`).
+* Function improvements.
+  * `rest` parameters (`...args`). Removes need for `arguments`.
+  * Default arguments.
+  * Arrow functions. Succinct. Does not
 
 * Supports OOP via prototypal inheritance.
 * Types
