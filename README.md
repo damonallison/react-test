@@ -10,12 +10,14 @@
 
 ## Books
 
-* Javascript - The Good Parts
+* [Javascript - The Good Parts](http://shop.oreilly.com/product/9780596517748.do)
 * [Read Understanding ECMAScript 6 | Leanpub](https://leanpub.com/understandinges6/read)
 * [Node.js in Action: Alex R. Young, Bradley Meck, Mike Cantelon, Tim Oxley, Marc Harter, TJ Holowaychuk, Nathan Rajlich: 9781617292576: Amazon.com: Books](https://www.amazon.com/Node-js-Action-Alex-R-Young/dp/1617292575/ref=dp_ob_title_bk)
 
 ## Links
+
 * [Mozilla : A re-introduction to Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+* [ECMAScript Specification](http://www.ecma-international.org/ecma-262/8.0/index.html)
 
 ## TODO
   * ES6 (ES2015)
@@ -41,7 +43,10 @@
 
 ## ECMAScript Versions
 
-* ES6 (ES2015) : the largest update to JS in history.
+* [ES6 (ES2015)](http://www.ecma-international.org/ecma-262/8.0/index.html) : the largest update to JS in history.
+
+> Some of its major enhancements included modules, class declarations, lexical block scoping, iterators and generators, promises for asynchronous programming, destructuring patterns, and proper tail calls.
+
 	* The first major release since 2007. The community was previously divided. This is the first “Harmonious” release.
 	* classes / modules
     * Improvements to functions (default param values)
@@ -74,6 +79,7 @@
 * `strict` and `non strict` mode.
   * You need a different mental model depending if strict mode is enabled or not.
   * Someone realized that JS needed to be controlled, introduced strict mode.
+  * ES6 will always apply `use strict` in classes, making it difficult to reason about when strict mode is on/off.
 
 * The meta-programming.
   * Calling functions with `call`, `apply`, and `bind`.
