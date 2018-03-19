@@ -93,6 +93,12 @@ test("equality", () => {
 
 });
 
+test("something cool", () => {
+    expect("damon" === "damon").toBeTruthy();
+    expect("damon").toBe("damon");
+
+});
+
 //
 // Using callbacks as an async pattern.
 // Write a test with a single argument function (done).
