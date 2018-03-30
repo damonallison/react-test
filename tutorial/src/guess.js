@@ -26,14 +26,16 @@ export default class Guess extends React.Component {
             currentGuess: ""
         }
 
-        // Wow, 'this' sucks.
+        // Makes `this` point at the component within the functions.
         this.handleChange = this.handleChange.bind(this);
         this.handleGuess = this.handleGuess.bind(this);
     }
 
     handleChange(event) {
         const val = event.target.value;
-        console.log("current guess: " + val);
+        console.log(`current guess: ${val}`);
+
+        // Performs a partial state update.
         this.setState({currentGuess: val});
     }
 
