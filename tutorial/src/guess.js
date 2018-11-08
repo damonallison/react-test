@@ -47,7 +47,7 @@ export default class Guess extends React.Component {
         if (isNaN(val)) {
             return;
         }
-        console.log("adding guess: " + val);
+        console.log(`adding guess: ${val}`);
 
         var guesses = this.state.guesses.slice();
         guesses.push(val);
@@ -65,6 +65,10 @@ export default class Guess extends React.Component {
     }
 
     canGuess() {
+        return 
+            !isNaN(this.state.guesses.length) &&
+            !isNaN(this.state.allowedGuesses)
+
         return this.state.guesses.length < this.state.allowedGuesses
     }
 

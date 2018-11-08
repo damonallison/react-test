@@ -6,7 +6,10 @@ https://facebook.github.io/react/tutorial/tutorial.html
 
 ## Creating a new application
 
-```
+```bash
+
+# create-react-app
+
 $ npm install -g create-react-app
 create-react-app my-app
 
@@ -61,7 +64,7 @@ npm start
         * JSX = XML-like language built on top of JS.
         * Does this work in practice? JSX sounds like a **complete hack**. JS DSL to produce HTML? What?
     * Angular uses HTML templates with custom Angular directives (e.g., `ngIf`, `ngFor`).
-    * How does this work in practice?
+        * How does this work in practice?
 
 * Requires you to build your own stack (good or bad?)
     * Router
