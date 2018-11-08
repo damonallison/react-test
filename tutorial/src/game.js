@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from './board';
+import History from "./history";
 
 export default class Game extends React.Component {
 
@@ -18,8 +19,8 @@ export default class Game extends React.Component {
     //     xIsNext: false
     // };
     //
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             history: [{
                 squares: Array(9).fill(null)
@@ -34,23 +35,13 @@ export default class Game extends React.Component {
         const current = history[this.state.stepNumber];
         const winner = this.calculateWinner(current.squares);
 
-        // Could / should this be broken out to a "history" component?
         //
-        // Important :
-        // * Each child in an iterator (<li> here) should have a unique `key` property.
-        //   `key` is used for change detection.
+        // Important : Each child in an iterator (<li> here) should have a
+        // unique `key` property. `key` is used for change detection.
         //
-        // * `key` is not accessible from the component itself.
-        //   Only react can access the key property.
+        // `key` is not accessible from the component itself. Only react can
+        // access the key property.
         //
-        //
-        const moves = history.map((step, move) => {
-            const desc = move ? 'Move #' + move : 'Game Start';
-            return (
-                <li key={move}>
-                <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
-                </li>);
-        });
         let status;
         if (winner) {
             status = 'Winner: ' + winner;
@@ -60,18 +51,25 @@ export default class Game extends React.Component {
         }
         return (
             <div className="game">
-            <div className="game-board">
-            <Board squares={current.squares} onClick={(i) => this.handleClick(i)} />
-            </div>
+              <div className="game-board">
+                <Board squares={current.squares} onClick={(i) => this.handleClick(i)} />
+              </div>
             <div className="game-info">
-            <div>{status}</div>
-            <ol>{moves}</ol>
-            </div>
+              <div>{status}</div>
+              <History history={history.slice(0, this.state.stepNumber + 1)} onClick={(i) => this.jumpTo(i)} />
+              </div>
             </div>)
     }
 
     jumpTo(step) {
         this.setState({
+            //
+            // We don't *need* to truncate history here since we will not be
+            // showing moves exceeding step, however for good measure we're
+            // going to. This guarantees we will not render history elements
+            // beyond step.
+            //
+            history: this.state.history.slice(0, step + 1),
             stepNumber: step,
             xIsNext: (step % 2) === 0,
         });
@@ -79,6 +77,7 @@ export default class Game extends React.Component {
 
     handleClick(i) {
 
+        // Truncate history.
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         //
@@ -92,6 +91,7 @@ export default class Game extends React.Component {
         }
         squares[i] = this.state.xIsNext ? 'X' : 'O'
         this.setState({
+            // Concat doesn't mutate the original array, so it is preferred over .push()
             history: history.concat([{
                 squares: squares,
             }]),
