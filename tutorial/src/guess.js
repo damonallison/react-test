@@ -65,11 +65,7 @@ export default class Guess extends React.Component {
     }
 
     canGuess() {
-        return 
-            !isNaN(this.state.guesses.length) &&
-            !isNaN(this.state.allowedGuesses)
-
-        return this.state.guesses.length < this.state.allowedGuesses
+        return !isNaN(this.state.guesses.length) && !isNaN(this.state.allowedGuesses) && this.state.guesses.length < this.state.allowedGuesses
     }
 
     hasWinner() {
