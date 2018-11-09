@@ -10,8 +10,10 @@
     "@types/react": "^16.4.18",
     "@types/react-dom": "^16.0.9",
     "lodash": "^4.17.11",
+    "prop-types": "^15.6.2",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
+    "react-redux": "^5.1.0",
     "react-scripts": "^2.1"
   },
   "scripts": {
@@ -25,5 +27,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "redux-devtools": "^3.4.1"
+  }
 }

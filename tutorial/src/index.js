@@ -9,9 +9,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// Custom component
-import Guess from './guess';
-import Game from './game';
+import Guess from './guess/Guess';
+
+// import Game from './game';
 
 // ========================================
 // <Game />   - Tic-tac-toe
@@ -19,6 +19,7 @@ import Game from './game';
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+  <Guess />,
+  // <Game />,
   document.getElementById("app")
 );

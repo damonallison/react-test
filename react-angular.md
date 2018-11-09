@@ -60,26 +60,11 @@ npm start
 ## Main Differences
 
 * Template language.
-    * React uses `JSX` to build component trees.
-        * JSX = XML-like language built on top of JS.
-        * Does this work in practice? JSX sounds like a **complete hack**. JS DSL to produce HTML? What?
+    * React uses `JSX` to build component trees. JSX is a DSL extension to JS.
     * Angular uses HTML templates with custom Angular directives (e.g., `ngIf`, `ngFor`).
-        * How does this work in practice?
 
 * Requires you to build your own stack (good or bad?)
     * Router
     * HTTP library
     * Additional unit testing libraries.
 
-* Type checking
-    * `Flow` (JS type checker) vs. `Typescript` (completely different language)
-    * `Redux` vs. `Binding`
-        * Is this a fair comparison?
-
-
-## Links
-
-* [React vs. Angular](https://www.sitepoint.com/react-vs-angular/)
-    * Describes both products with no clear winner. The authors generally prefer React due to minialism.
-* [Angular vs. React - the tie breaker](https://www.airpair.com/angularjs/posts/angular-vs-react-the-tie-breaker)
-    * React is generally easier. Likes Angular's templating engine over React.

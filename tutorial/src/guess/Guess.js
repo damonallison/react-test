@@ -6,13 +6,13 @@ import React from 'react';
 //
 // "Controlled Components"
 //
-// Controlled Components is the React term for having a Javascript function
-// handle the form submission and have access to the data.
+// A Controlled Component is the React term for "controlling" (i.e., handling)
+// DOM events and "controlling" what we do with them.
 //
-// The form is "controlled" in the sense that React handles
-// interaction with the form, overriding the default value.
+// In this example, the form is "controlled". We handle interaction with the
+// form, overriding the default value.
 //
-// * Every state mutation has an associated handler function.
+// * In this example, every state mutation has an associated handler function.
 // * This is effectively manual data binding.
 //
 export default class Guess extends React.Component {
@@ -26,34 +26,42 @@ export default class Guess extends React.Component {
             currentGuess: ""
         }
 
-        // Makes `this` point at the component within the functions.
+        //
+        // Makes `this` point to our component from within the functions.
+        //
+        // Generally, any callback you reference from within JSX, you want to
+        // manually bind to give each callback the correct `this` context.
+        //
         this.handleChange = this.handleChange.bind(this);
         this.handleGuess = this.handleGuess.bind(this);
     }
 
     handleChange(event) {
         const val = event.target.value;
-        console.log(`current guess: ${val}`);
+        console.log(`Updating current guess: ${val}`);
 
         // Performs a partial state update.
         this.setState({currentGuess: val});
     }
 
     handleGuess(event) {
-
+        //
+        // Tells the user-agent to *not* perform the default action for this
+        // event. In this case, prevent the form from submitting.
+        //
         event.preventDefault();
 
         const val = parseInt(this.state.currentGuess);
         if (isNaN(val)) {
             return;
         }
-        console.log(`adding guess: ${val}`);
+        console.log(`Adding guess: ${val}`);
 
         var guesses = this.state.guesses.slice();
         guesses.push(val);
         this.setState({ guesses: guesses })
 
-        console.log("guesses : " + this.jsonStringify(this.state.guesses));
+        console.log("Guesses : " + this.jsonStringify(this.state.guesses));
 
 
         // How do we access the text input control to delete

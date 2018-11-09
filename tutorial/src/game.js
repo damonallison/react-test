@@ -2,6 +2,14 @@ import React from 'react';
 import Board from './board';
 import History from "./history";
 
+//
+// React components allow you to split UI into independent, reusable pieces, and
+// think about each piece in isolation.
+//
+// React, because it is closely tied with JS, uses "camelCase" naming
+// conventions. Always name components using UpperCase to allow React to
+// distinguish between an HTML element (lowercase) and a component (uppercase).
+//
 export default class Game extends React.Component {
 
     //
