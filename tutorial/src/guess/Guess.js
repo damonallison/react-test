@@ -17,8 +17,8 @@ import React from 'react';
 //
 export default class Guess extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             randomNumber: Math.floor(Math.random() * 100) + 1,
             allowedGuesses: 5,
@@ -52,20 +52,19 @@ export default class Guess extends React.Component {
         event.preventDefault();
 
         const val = parseInt(this.state.currentGuess);
+
+        // Regardless if this guess is valid or not, we want to clear it.
+        this.setState( {currentGuess: ""} );
+        
         if (isNaN(val)) {
+            console.warn(`Invalid guess entered: ${val}`);
             return;
         }
-        console.log(`Adding guess: ${val}`);
-
-        var guesses = this.state.guesses.slice();
+        let guesses = this.state.guesses.slice();
+        console.log("Guesses : " + this.jsonStringify(guesses));
         guesses.push(val);
+
         this.setState({ guesses: guesses })
-
-        console.log("Guesses : " + this.jsonStringify(this.state.guesses));
-
-
-        // How do we access the text input control to delete
-        // the text?
     }
 
     jsonStringify(obj) {
