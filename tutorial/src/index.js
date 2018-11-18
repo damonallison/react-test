@@ -9,7 +9,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import Guess from './guess/Guess';
+import GuessingGame from './guess/GuessingGame';
 import MouseTracker from './guess/MouseTracker';
 
 // import Game from './game';
@@ -21,7 +21,7 @@ import MouseTracker from './guess/MouseTracker';
 
 ReactDOM.render(
   <MouseTracker render={state => (
-      <Guess />
+      <GuessingGame />
     )} />,
   // <Game />,
   document.getElementById("app")

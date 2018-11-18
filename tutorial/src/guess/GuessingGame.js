@@ -15,7 +15,7 @@ import React from 'react';
 // * In this example, every state mutation has an associated handler function.
 // * This is effectively manual data binding.
 //
-export default class Guess extends React.Component {
+export default class GuessingGame extends React.Component {
 
     constructor(props) {
         super(props);
